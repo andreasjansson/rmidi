@@ -108,4 +108,3 @@ notes.lower <- midi.note(tick.lower * ppq, dur.lower * ppq - 4, pitch.lower + 12
 midi.play(rbind(notes.upper, notes.lower))
 
 detach("midi.notes")
-F <- FALSE
