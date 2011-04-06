@@ -1,0 +1,11 @@
+Package: rmidi
+Version: 0.1-1
+Date: 2011-04-07
+Title: R/MIDI interface
+Author: Andreas Jansson <andreas.s.t.jansson@gmail.com>
+Maintainer: Andreas Jansson <andreas.s.t.jansson@gmail.com>
+Depends: R (>= 2.0.0)
+Description: An interface from R to ALSA seqencer. Currently capable
+						 of outputting notes, applying scales to pitch vectors and
+						 reading .mid files.
+License: GPL (>= 3)

@@ -1,0 +1,16 @@
+#!/bin/sh
+PNAME=rmidi
+VER=`sed -n 's/Version: \(.*\)/\1/p' DESCRIPTION`
+PDIR=`pwd`
+rm -rf /tmp/${PNAME}
+mkdir /tmp/${PNAME} && cp -r . /tmp/${PNAME}
+cd /tmp && (find ${PNAME}/ -name .svn -or -name \*~ | xargs rm -rf)
+rm -rf /tmp/${PNAME}/autom* /tmp/${PNAME}/a.out* /tmp/${PNAME}/config.* /tmp/${PNAME}/src/Makevars /tmp/${PNAME}/src/config.h
+rm -f /tmp/${PNAME}/src/*.o /tmp/${PNAME}/src/*.so
+find /tmp/${PNAME} -name *~ | xargs rm -f
+find /tmp/${PNAME} -name \#* | xargs rm -f
+find /tmp/${PNAME} -name .\#* | xargs rm -f
+find /tmp/${PNAME} -name .R* | xargs rm -f
+tar fcz "${PDIR}/../${PNAME}_${VER}.tar.gz" ${PNAME}
+cd "${PDIR}"
+ls -l "../${PNAME}_${VER}.tar.gz"
