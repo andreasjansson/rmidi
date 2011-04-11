@@ -76,7 +76,8 @@ midi.play <- function(mat)
   if(sum(m[,data.cols] < 0 | m[,data.cols] > 127))
     stop("Data values must be in the range (0, 127).")
 
-  # not sure if this helps or not, but it feels right
+  # order such that note off events occur before note on events
+  m <- m[order(m[,2], decreasing = TRUE), ]
   m <- m[order(m[,1]),]
 
   # if the matrix has only one command, nrow(m) will now be NULL
