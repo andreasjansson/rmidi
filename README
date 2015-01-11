@@ -145,9 +145,5 @@ On some systems, if the installation script fails, you have to
 manually go to the src directory and remove any *.o files before
 trying to install again.
 
-If you have any issues, honestly *any* issues, please send me a
-message through Github. I'd love to know if anyone other than myself
-actually finds any use of this software.
-
 
 Andreas Jansson 2011
